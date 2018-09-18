@@ -4,6 +4,21 @@
 #respond to that input.(if it is not a valid input re-request input)
 #If player reaches 3,1 print victory! and exit program
 
+def printing(x,y):
+    if (x,y) == (1,1) or (x,y) == (2,1):
+        print("You can travel: (N)orth.")
+    elif (x,y) == (1,2):
+        print("You can travel: (N)orth or (E)ast or (S)outh.")
+    elif (x,y) == (2,2) or (x,y) == (3,3):
+        print("You can travel: (S)outh or (W)est.")
+    elif (x,y) == (1,3):
+        print("You can travel: (E)ast or (S)outh.")
+    elif (x,y) == (2,3):
+        print("You can travel: (E)ast or (W)est.")
+    elif (x,y) == (3,2):
+        print("You can travel: (N)orth or (S)outh.")
+    return(x,y)
+
 x = 1
 y = 1
 
@@ -15,7 +30,7 @@ while (x,y) != (3,1):
         Direction = str(input("Direction: "))
         if Direction in list(valid_direction):
             y += 1
-            print("You can travel: (N)orth or (E)ast or (S)outh.")
+            printing(x,y)
         elif Direction != valid_direction:
             print("Not a valid direction!")
     if (x,y) == (2,1):
@@ -35,7 +50,7 @@ while (x,y) != (3,1):
         elif (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
             y -= 1
             print("You can travel: (N)orth.")
-        elif (Direction == "e" or Direction == "E")and (Direction in list(valid_direction)):
+        elif (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
             x += 1
             print("You can travel: (S)outh or (W)est.")
         elif Direction != valid_direction:
