@@ -19,6 +19,15 @@ def printing(x,y):
         print("You can travel: (N)orth or (S)outh.")
     return(x,y)
 
+def move_up(x,y):
+    if Direction in list(valid_direction):
+        y += 1
+        printing(x,y)
+    elif Direction != valid_direction:
+        print("Not a valid direction!")
+
+
+
 x = 1
 y = 1
 
@@ -38,7 +47,7 @@ while (x,y) != (3,1):
         Direction = str(input("Direction: "))
         if Direction in list(valid_direction):
             y += 1
-            print("You can travel: (S)outh or (W)est.")
+            printing(x,y)
         elif Direction != valid_direction:
             print("Not a valid direction!")
     elif (x,y) == (1,2):
@@ -46,13 +55,13 @@ while (x,y) != (3,1):
         Direction = str(input("Direction: "))
         if (Direction == "n" or Direction == "N") and (Direction in list(valid_direction)):
             y += 1
-            print("You can travel: (E)ast or (S)outh.")
+            printing(x,y)
         elif (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
             y -= 1
-            print("You can travel: (N)orth.")
+            printing(x,y)
         elif (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
             x += 1
-            print("You can travel: (S)outh or (W)est.")
+            printing(x,y)
         elif Direction != valid_direction:
             print("Not a valid direction!")
     elif (x,y) == (2,2):
@@ -60,10 +69,10 @@ while (x,y) != (3,1):
         Direction = str(input("Direction: "))
         if (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
             y -= 1
-            print("You can travel: (N)orth.")
+            printing(x,y)
         elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
             x -= 1
-            print("You can travel: (N)orth or (E)ast or (S)outh.")
+            printing(x,y)
         elif Direction != valid_direction:
             print("Not a valid direction!")
     elif (x,y) == (3,3):
@@ -71,10 +80,10 @@ while (x,y) != (3,1):
         Direction = str(input("Direction: "))
         if (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
             y -= 1
-            print("You can travel: (N)orth or (S)outh.")
+            printing(x,y)
         elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
             x -= 1
-            print("You can travel: (E)ast or (W)est.")
+            printing(x,y)
         elif Direction != valid_direction:
             print("Not a valid direction!")
     elif (x,y) == (1,3):
@@ -82,10 +91,10 @@ while (x,y) != (3,1):
         Direction = str(input("Direction: "))
         if (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
             x += 1
-            print("You can travel: (E)ast or (W)est.")
+            printing(x,y)
         elif (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
             y -= 1
-            print("You can travel: (N)orth or (E)ast or (S)outh.")
+            printing(x,y)
         elif Direction != valid_direction:
             print("Not a valid direction!")
     elif (x,y) == (2,3):
@@ -93,10 +102,10 @@ while (x,y) != (3,1):
         Direction = str(input("Direction: "))
         if (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
             x += 1
-            print("You can travel: (S)outh or (W)est.")
+            printing(x,y)
         elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
             x -= 1
-            print("You can travel: (E)ast or (S)outh.")
+            printing(x,y)
         elif Direction != valid_direction:
             print("Not a valid direction!")
     elif (x,y) == (3,2):
@@ -106,7 +115,7 @@ while (x,y) != (3,1):
             y -= 1
         elif (Direction == "n" or Direction == "N") and (Direction in list(valid_direction)):
             y += 1
-            print("You can travel: (S)outh or (W)est.")
+            printing(x,y)
         elif Direction != valid_direction:
             print("Not a valid direction!")
 else:
