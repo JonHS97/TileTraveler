@@ -25,19 +25,24 @@ def printing(x,y):
         print("You can travel: (N)orth or (S)outh.")
     return(x,y)
 
-def move_up(Direction):#didnt finish this. Was going to make a function that I could use to allways add or subtract the correct amount of x and y based on the input
-    if Direction == "n" or Direction == "N":
-        y += 1
+def move(x,y):#didnt finish this. Was going to make a function that I could use to allways add or subtract the correct amount of x and y based on the input
+    valid_direction = valid_directs(x,y)
+    Direction = str(input("Direction: "))
+    if (Direction == "n" or Direction == "N") and (Direction in list(valid_direction)):
+        (x,y) = (x,y+1)
         printing(x,y)
-    elif Direction == "s" or Direction == "S":
-        y -= 1
+    elif (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
+        (x,y) = (x,y-1)
         printing(x,y)
-    elif Direction == "e" or Direction == "E":
-        x += 1
+    elif (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
+        (x,y) = (x+1,y)
         printing(x,y)
-    elif Direction == "w" or Direction == "W":
-        x -= 1
+    elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
+        (x,y) = (x-1,y)
         printing(x,y)
+    elif Direction != valid_direction:
+        print("Not a valid direction!")
+    return(x,y)
 
 def valid_directs(x,y): #not sure how to fix this. Was supposed to replace valid_direction in all the if statements.
     if (x,y) == (1,1) or (x,y) == (2,1):
@@ -52,7 +57,7 @@ def valid_directs(x,y): #not sure how to fix this. Was supposed to replace valid
         valid_direction = ("e","E","w","W")
     elif (x,y) == (3,2):
         valid_direction = ("s","S","n","N")
-    return(x,y)
+    return(valid_direction)
 
 x = 1
 y = 1
@@ -61,89 +66,104 @@ printing(x,y)
 
 while (x,y) != (3,1):
     if (x,y) == (1,1):
-        valid_direction = ("n","N")
-        Direction = str(input("Direction: "))
-        if Direction in list(valid_direction):
-            y += 1
-            printing(x,y)
-        elif Direction != valid_direction:
-            print("Not a valid direction!")
+        move(x,y)
+        #valid_direction = ("n","N")
+        #Direction = str(input("Direction: "))
+        #if Direction in list(valid_direction):
+        #    y += 1
+        #    printing(x,y)
+        #elif Direction != valid_direction:
+        #    print("Not a valid direction!")
     if (x,y) == (2,1):
-        valid_direction = ("n","N")
-        Direction = str(input("Direction: "))
-        if Direction in list(valid_direction):
-            y += 1
-            printing(x,y)
-        elif Direction != valid_direction:
-            print("Not a valid direction!")
+        move(x,y)
+        #valid_directs(x,y)
+        #valid_direction = ("n","N")
+        #Direction = str(input("Direction: "))
+        #if Direction in list(valid_direction):
+        #    y += 1
+        #    printing(x,y)
+        #elif Direction != valid_direction:
+        #    print("Not a valid direction!")
     elif (x,y) == (1,2):
-        valid_direction = ("n","N","s","S","e","E")
-        Direction = str(input("Direction: "))
-        if (Direction == "n" or Direction == "N") and (Direction in list(valid_direction)):
-            y += 1
-            printing(x,y)
-        elif (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
-            y -= 1
-            printing(x,y)
-        elif (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
-            x += 1
-            printing(x,y)
-        elif Direction != valid_direction:
-            print("Not a valid direction!")
+        move(x,y)
+        #valid_directs(x,y)
+        #valid_direction = ("n","N","s","S","e","E")
+        #Direction = str(input("Direction: "))
+        #if (Direction == "n" or Direction == "N") and (Direction in list(valid_direction)):
+        #    y += 1
+        #    printing(x,y)
+        #elif (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
+        #    y -= 1
+        #    printing(x,y)
+        #elif (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
+        #    x += 1
+        #    printing(x,y)
+        #elif Direction != valid_direction:
+        #    print("Not a valid direction!")
     elif (x,y) == (2,2):
-        valid_direction = ("s","S","w","W")
-        Direction = str(input("Direction: "))
-        if (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
-            y -= 1
-            printing(x,y)
-        elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
-            x -= 1
-            printing(x,y)
-        elif Direction != valid_direction:
-            print("Not a valid direction!")
+        move(x,y)
+        #valid_directs(x,y)
+        #valid_direction = ("s","S","w","W")
+        #Direction = str(input("Direction: "))
+        #if (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
+        #    y -= 1
+        #    printing(x,y)
+        #elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
+        #    x -= 1
+        #    printing(x,y)
+        #elif Direction != valid_direction:
+        #    print("Not a valid direction!")
     elif (x,y) == (3,3):
-        valid_direction = ("s","S","w","W")
-        Direction = str(input("Direction: "))
-        if (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
-            y -= 1
-            printing(x,y)
-        elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
-            x -= 1
-            printing(x,y)
-        elif Direction != valid_direction:
-            print("Not a valid direction!")
+        move(x,y)
+        #valid_directs(x,y)
+        #valid_direction = ("s","S","w","W")
+        #Direction = str(input("Direction: "))
+        #if (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
+        #    y -= 1
+        #    printing(x,y)
+        #elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
+        #    x -= 1
+        #    printing(x,y)
+        #elif Direction != valid_direction:
+        #    print("Not a valid direction!")
     elif (x,y) == (1,3):
-        valid_direction = ("e","E","s","S")
-        Direction = str(input("Direction: "))
-        if (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
-            x += 1
-            printing(x,y)
-        elif (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
-            y -= 1
-            printing(x,y)
-        elif Direction != valid_direction:
-            print("Not a valid direction!")
+        move(x,y)
+        #valid_directs(x,y)
+        #valid_direction = ("e","E","s","S")
+        #Direction = str(input("Direction: "))
+        #if (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
+        #    x += 1
+        #    printing(x,y)
+        #elif (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
+        #    y -= 1
+        #    printing(x,y)
+        #elif Direction != valid_direction:
+        #    print("Not a valid direction!")
     elif (x,y) == (2,3):
-        valid_direction = ("e","E","w","W")
-        Direction = str(input("Direction: "))
-        if (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
-            x += 1
-            printing(x,y)
-        elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
-            x -= 1
-            printing(x,y)
-        elif Direction != valid_direction:
-            print("Not a valid direction!")
+        move(x,y)
+        #valid_directs(x,y)
+        #valid_direction = ("e","E","w","W")
+        #Direction = str(input("Direction: "))
+        #if (Direction == "e" or Direction == "E") and (Direction in list(valid_direction)):
+        #    x += 1
+        #    printing(x,y)
+        #elif (Direction == "w" or Direction == "W") and (Direction in list(valid_direction)):
+        #    x -= 1
+        #    printing(x,y)
+        #elif Direction != valid_direction:
+        #    print("Not a valid direction!")
     elif (x,y) == (3,2):
-        valid_direction = ("s","S","n","N")
-        Direction = str(input("Direction: "))
-        if (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
-            y -= 1
-        elif (Direction == "n" or Direction == "N") and (Direction in list(valid_direction)):
-            y += 1
-            printing(x,y)
-        elif Direction != valid_direction:
-            print("Not a valid direction!")
+        move(x,y)
+        #valid_directs(x,y)
+        #valid_direction = ("s","S","n","N")
+        #Direction = str(input("Direction: "))
+        #if (Direction == "s" or Direction == "S") and (Direction in list(valid_direction)):
+        #    y -= 1
+        #elif (Direction == "n" or Direction == "N") and (Direction in list(valid_direction)):
+        #    y += 1
+        #    printing(x,y)
+        #elif Direction != valid_direction:
+        #    print("Not a valid direction!")
 else:
     print("Victory!")
     exit
