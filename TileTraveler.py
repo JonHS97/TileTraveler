@@ -23,9 +23,8 @@ def printing(x,y):
         print("You can travel: (E)ast or (W)est.")
     elif (x,y) == (3,2):
         print("You can travel: (N)orth or (S)outh.")
-    return(x,y)
 
-def move(x,y):#didnt finish this. Was going to make a function that I could use to allways add or subtract the correct amount of x and y based on the input
+def moving(x,y):#didnt finish this. Was going to make a function that I could use to allways add or subtract the correct amount of x and y based on the input
     valid_direction = valid_directs(x,y)
     Direction = str(input("Direction: "))
     if (Direction == "n" or Direction == "N") and (Direction in list(valid_direction)):
@@ -59,6 +58,9 @@ def valid_directs(x,y): #not sure how to fix this. Was supposed to replace valid
         valid_direction = ("s","S","n","N")
     return(valid_direction)
 
+#def code():
+
+
 x = 1
 y = 1
 
@@ -66,7 +68,7 @@ printing(x,y)
 
 while (x,y) != (3,1):
     if (x,y) == (1,1):
-        move(x,y)
+        (x,y) = moving(1,1)
         #valid_direction = ("n","N")
         #Direction = str(input("Direction: "))
         #if Direction in list(valid_direction):
@@ -75,7 +77,7 @@ while (x,y) != (3,1):
         #elif Direction != valid_direction:
         #    print("Not a valid direction!")
     if (x,y) == (2,1):
-        move(x,y)
+        (x,y) = moving(2,1)
         #valid_directs(x,y)
         #valid_direction = ("n","N")
         #Direction = str(input("Direction: "))
@@ -85,7 +87,7 @@ while (x,y) != (3,1):
         #elif Direction != valid_direction:
         #    print("Not a valid direction!")
     elif (x,y) == (1,2):
-        move(x,y)
+        (x,y) = moving(1,2)
         #valid_directs(x,y)
         #valid_direction = ("n","N","s","S","e","E")
         #Direction = str(input("Direction: "))
@@ -101,7 +103,7 @@ while (x,y) != (3,1):
         #elif Direction != valid_direction:
         #    print("Not a valid direction!")
     elif (x,y) == (2,2):
-        move(x,y)
+        (x,y) = moving(2,2)
         #valid_directs(x,y)
         #valid_direction = ("s","S","w","W")
         #Direction = str(input("Direction: "))
@@ -114,7 +116,7 @@ while (x,y) != (3,1):
         #elif Direction != valid_direction:
         #    print("Not a valid direction!")
     elif (x,y) == (3,3):
-        move(x,y)
+        (x,y) = moving(3,3)
         #valid_directs(x,y)
         #valid_direction = ("s","S","w","W")
         #Direction = str(input("Direction: "))
@@ -127,7 +129,7 @@ while (x,y) != (3,1):
         #elif Direction != valid_direction:
         #    print("Not a valid direction!")
     elif (x,y) == (1,3):
-        move(x,y)
+        (x,y) = moving(1,3)
         #valid_directs(x,y)
         #valid_direction = ("e","E","s","S")
         #Direction = str(input("Direction: "))
@@ -140,7 +142,7 @@ while (x,y) != (3,1):
         #elif Direction != valid_direction:
         #    print("Not a valid direction!")
     elif (x,y) == (2,3):
-        move(x,y)
+        (x,y) = moving(2,3)
         #valid_directs(x,y)
         #valid_direction = ("e","E","w","W")
         #Direction = str(input("Direction: "))
@@ -153,7 +155,7 @@ while (x,y) != (3,1):
         #elif Direction != valid_direction:
         #    print("Not a valid direction!")
     elif (x,y) == (3,2):
-        move(x,y)
+        (x,y) = moving(3,2)
         #valid_directs(x,y)
         #valid_direction = ("s","S","n","N")
         #Direction = str(input("Direction: "))
